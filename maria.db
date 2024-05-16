@@ -1,0 +1,40 @@
+CREATE DATABASE ControlAsistencias;
+USE ControlAsistencias;
+
+CREATE TABLE Estudiantes (
+    id_estudiante INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255),
+    clase VARCHAR(50)
+);
+
+CREATE TABLE Profesores (
+    id_profesor INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255),
+    asignatura VARCHAR(100),
+    horario VARCHAR(100)
+);
+
+CREATE TABLE Asistencias (
+    id_asistencia INT PRIMARY KEY AUTO_INCREMENT,
+    id_estudiante INT,
+    fecha DATE,
+    asistio BOOLEAN,
+    FOREIGN KEY (id_estudiante) REFERENCES Estudiantes(id_estudiante)
+);
+INSERT INTO Estudiantes (nombre, clase) VALUES
+('Juan Pérez', 'Matemáticas'),
+('María Gómez', 'Historia'),
+('Carlos Rodríguez', 'Ciencias');
+
+INSERT INTO Profesores (nombre, asignatura, horario) VALUES
+('Ana López', 'Matemáticas', 'Lunes y Miércoles 8:00 - 10:00'),
+('Pedro Martínez', 'Historia', 'Martes y Jueves 10:00 - 12:00'),
+('Laura Fernández', 'Ciencias', 'Lunes y Miércoles 13:00 - 15:00');
+
+INSERT INTO Asistencias (id_estudiante, fecha, asistio) VALUES
+(1, '2024-05-01', true),
+(1, '2024-05-02', false),
+(2, '2024-05-01', true),
+(2, '2024-05-02', true),
+(3, '2024-05-01', true),
+(3, '2024-05-02', false); 
