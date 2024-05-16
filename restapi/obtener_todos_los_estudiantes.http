@@ -1,0 +1,1 @@
+get http://172.16.5.77:5000/api/students
