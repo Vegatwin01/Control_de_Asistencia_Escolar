@@ -3,7 +3,7 @@ import mariadb
 import sys
 
 # Importar configuración de acceso a la base de datos
-from config import DATABASE_CONFIG
+from BackEnd.config import DATABASE_CONFIG
 
 app = Flask(__name__)
 
